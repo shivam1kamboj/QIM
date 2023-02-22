@@ -15,8 +15,8 @@ def qim_matrix(g, N, J):
         c[i - 1] = -1 if i > 0 else 0
         c[i + 1] = -1 if i < N - 1 else 0
 
-        c[N + i - 1] = -1 if i > 0 else 0
-        c[N + i + 1] = -1 if i < N else 0
+        c[N + i - 1] = 1 if i > 0 else 0
+        c[N + i + 1] = 1 if i < N else 0
 
     for i, c in enumerate(M[N:]):
         c[N + i] = -2 * g
@@ -47,3 +47,4 @@ plt.title(f"M-matrix for N =10", fontsize=20)
 ax = plt.gca()
 ax.set_aspect('equal')
 plt.savefig('/Users/shivamkamboj/Documents/UC_Merced/Research/Spring_2023/QIM/M_matrix/M_for_N_10.pdf')
+
