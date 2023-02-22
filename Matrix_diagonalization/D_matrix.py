@@ -6,7 +6,7 @@ M = qim_matrix(g=0.3, N=10, J=1)
 
 # Finding eigenvalues and eigenvectors of M
 
-Eigvals, Eigvecs = np.linalg.eig(M)
+Eigvals, Eigvecs = np.linalg.eigh(M)
 
 D = np.diag(Eigvals)
 
