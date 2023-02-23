@@ -15,8 +15,14 @@ def qim_matrix(g, N, J):
         c[i - 1] = -1 if i > 0 else 0
         c[i + 1] = -1 if i < N - 1 else 0
 
+        c[N + i - 1] = 1 if i > 0 else 0
+        c[N + i + 1] = -1 if i < N else 0
+
     for i, c in enumerate(M[N:]):
         c[N + i] = -2 * g
+
+        c[i - 1] = -1 if i > 0 else 0
+        c[i + 1] = 1 if i < N - 1 else 0
 
         c[N + i - 1] = 1 if i > 0 else 0
         c[N + i + 1] = 1 if i < N - 1 else 0
